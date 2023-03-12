@@ -1,5 +1,9 @@
 # selenium-helper
 
+<pre>
+pip install selenium-helper
+</pre>
+
 Supported APIs:
 <pre>
 import selenium_helper

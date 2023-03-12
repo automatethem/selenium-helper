@@ -1,30 +1,30 @@
-# selenium-helper
+# selenium-supporter
 
 <pre>
-pip install selenium-helper
+pip install selenium-supporter
 </pre>
 
 Supported APIs:
 <pre>
-import selenium_helper
+import selenium_supporter
 
-selenium_helper.drivers.ChromeDriver()
-selenium_helper.drivers.ChromeDebuggingDriver()
+selenium_supporter.drivers.ChromeDriver()
+selenium_supporter.drivers.ChromeDebuggingDriver()
 
-selenium_helper.utils.get_chrome_web_browser_path()
-selenium_helper.utils.kill_all_chrome_web_browser_processes()
-selenium_helper.utils.open_chrome_web_browser(user_data_dir=None, proxy_server=None)
-selenium_helper.utils.open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, remote_debugging_address, user_data_dir=None, proxy_server=None, headless=False)
-selenium_helper.utils.check_port_open(ip, port)
-selenium_helper.utils.save_partial_screenshot(element, image_file)
-selenium_helper.utils.save_full_screenshot(driver, image_file)     
-selenium_helper.utils.save_full_screenshot_with_scroll(driver, image_file)
-selenium_helper.utils.save_partial_screenshot_with_scroll(driver, partial_element, image_file)
-selenium_helper.utils.set_value(driver, element, value)
-selenium_helper.utils.set_attribute(driver, element, attribute, value)
-selenium_helper.utils.remove_element(driver, element)
-selenium_helper.utils.remove_x_scrollbar(driver)
-selenium_helper.utils.click(driver, element)
-selenium_helper.utils.send_keys_click(driver, element)    
-selenium_helper.utils.javascript_click(driver, element)
+selenium_supporter.utils.get_chrome_web_browser_path()
+selenium_supporter.utils.kill_all_chrome_web_browser_processes()
+selenium_supporter.utils.open_chrome_web_browser(user_data_dir=None, proxy_server=None)
+selenium_supporter.utils.open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, remote_debugging_address, user_data_dir=None, proxy_server=None, headless=False)
+selenium_supporter.utils.check_port_open(ip, port)
+selenium_supporter.utils.save_partial_screenshot(element, image_file)
+selenium_supporter.utils.save_full_screenshot(driver, image_file)     
+selenium_supporter.utils.save_full_screenshot_with_scroll(driver, image_file)
+selenium_supporter.utils.save_partial_screenshot_with_scroll(driver, partial_element, image_file)
+selenium_supporter.utils.set_value(driver, element, value)
+selenium_supporter.utils.set_attribute(driver, element, attribute, value)
+selenium_supporter.utils.remove_element(driver, element)
+selenium_supporter.utils.remove_x_scrollbar(driver)
+selenium_supporter.utils.click(driver, element)
+selenium_supporter.utils.send_keys_click(driver, element)    
+selenium_supporter.utils.javascript_click(driver, element)
 </pre>

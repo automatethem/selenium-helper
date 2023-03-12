@@ -22,7 +22,7 @@ except:
     pass
 import time
 import sys
-import logging
+from python_supporter import logging
 import getpass
 import traceback
 
@@ -219,7 +219,7 @@ if __name__ == "__main__":
     level = logging.DEBUG
     #level = logging.INFO
     #level = logging.ERROR
-    cranberry.logging_lib.basic_config(level)
+    logging.basic_config(level)
 
     #chrome_debugger_address = "127.0.0.1:9222"
     #proxy_server = "45.159.155.25:61302"

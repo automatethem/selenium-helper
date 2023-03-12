@@ -1,0 +1,6 @@
+#Anaconda3-2022.05-Windows-x86.exe
+#https://repo.anaconda.com/archive/
+#selenium==4.7.2 #콘솔창뜸
+selenium==4.3.0
+#webdriver-manager==3.8.0 #bug
+webdriver-manager==3.7.0

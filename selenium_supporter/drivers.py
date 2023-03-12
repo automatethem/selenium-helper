@@ -17,7 +17,7 @@ except:
     pass
 import time
 import sys
-import logging
+from python_supporter import logging
 import getpass
 import traceback
 

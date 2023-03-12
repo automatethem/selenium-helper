@@ -17,8 +17,6 @@ except:
     pass
 import time
 import sys
-sys.path.append('../')
-import cranberry.logging_lib
 import logging
 import getpass
 import traceback

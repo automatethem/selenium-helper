@@ -3,6 +3,29 @@ from pathlib import Path
 import subprocess
 import os
 
+import platform
+from PIL import Image
+from io import StringIO
+from PIL import Image
+from io import BytesIO
+from io import BytesIO
+from pathlib import Path
+import sys
+import base64
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
+try:
+    import pyautogui
+except:
+    pass
+import time
+import sys
+import logging
+import getpass
+import traceback
+
 def get_chrome_web_browser_path():
     #windows 7
     path1 = "C:\Program Files\Google\Chrome\Application\\chrome.exe"

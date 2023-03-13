@@ -1,4 +1,4 @@
-import socket
+##import socket
 from pathlib import Path
 import subprocess
 import os
@@ -72,6 +72,7 @@ def open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, re
         headless_option = f"--headless={headless}"
     subprocess.Popen(f'{chrome_web_browser_path} --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0') 
     
+'''    
 def check_port_open(ip, port):
     tcp_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     tcp_result = tcp_sock.connect_ex((ip, port))
@@ -82,7 +83,7 @@ def check_port_open(ip, port):
         return True
     else:
         return False
-
+'''
     
     
     

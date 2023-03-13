@@ -29,3 +29,7 @@ selenium_supporter.utils.click(driver, element)
 selenium_supporter.utils.send_keys_click(driver, element)    
 selenium_supporter.utils.javascript_click(driver, element)
 </pre>
+
+Examples:  
+https://github.com/automatethem/selenium-supporter/blob/main/examples/server.py  
+https://github.com/automatethem/selenium-supporter/blob/main/examples/client.py

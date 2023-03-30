@@ -14,6 +14,7 @@ selenium_supporter.drivers.ChromeDebuggingDriver()
 
 selenium_supporter.utils.get_chrome_web_browser_path()
 selenium_supporter.utils.kill_all_chrome_web_browser_processes()
+selenium_supporter.utils.kill_all_chrome_web_browser_driver_processes()
 selenium_supporter.utils.open_chrome_web_browser(user_data_dir=None, proxy_server=None)
 selenium_supporter.utils.open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, remote_debugging_address, user_data_dir=None, proxy_server=None, headless=False)
 selenium_supporter.utils.check_port_open(ip, port)

@@ -2,7 +2,8 @@
 #https://repo.anaconda.com/archive/
 #selenium==4.7.2 #콘솔창뜸
 selenium==4.3.0
-#webdriver-manager==3.8.0 #bug
-webdriver-manager==3.7.0
+#webdriver-manager==3.8.0 #윈도우에서 버그
+#webdriver-manager==3.7.0 #맥에서 버그
+webdriver-manager==3.8.6
 python_supporter
 pyautogui

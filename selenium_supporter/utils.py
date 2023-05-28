@@ -2,7 +2,6 @@
 from pathlib import Path
 import subprocess
 import os
-
 import platform
 from PIL import Image
 from io import StringIO
@@ -42,12 +41,22 @@ def get_chrome_web_browser_path():
         return path3
 
 def kill_all_chrome_web_browser_processes():
-    #https://stackoverflow.com/questions/57792469/kill-certain-chrome-process-in-python-not-all
-    subprocess.call("TASKKILL /f /IM CHROME.EXE")
+    if platform.system() == 'Darwin': #맥
+        pass
+    elif platform.system() == 'Windows': #윈도우
+        #https://stackoverflow.com/questions/57792469/kill-certain-chrome-process-in-python-not-all
+        subprocess.call("TASKKILL /f /IM CHROME.EXE")
+    elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+        pass
 
 def kill_all_chrome_web_browser_driver_processes():
-    subprocess.call("TASKKILL /f /IM CHROMEDRIVER.EXE")
-
+    if platform.system() == 'Darwin': #맥
+        pass
+    elif platform.system() == 'Windows': #윈도우
+        subprocess.call("TASKKILL /f /IM CHROMEDRIVER.EXE")
+    elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+        pass
+    
 def open_chrome_web_browser(user_data_dir=None, proxy_server=None):
     chrome_web_browser_path = get_chrome_web_browser_path()
     #https://not-to-be-reset.tistory.com/454

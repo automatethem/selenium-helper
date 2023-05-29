@@ -88,7 +88,8 @@ def open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, re
     headless_option = ""
     if headless:
         headless_option = f"--headless={headless}"
-    subprocess.Popen(f'{chrome_web_browser_path} --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0')   
+    subprocess.Popen([chrome_web_browser_path, f'--remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0']) 
+    #subprocess.Popen(f'{chrome_web_browser_path} --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0') #윈도우 ok 
 
 def save_partial_screenshot(element, image_file):
     #'''

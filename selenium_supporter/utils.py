@@ -26,19 +26,24 @@ import getpass
 import traceback
 
 def get_chrome_web_browser_path():
-    #windows 7
-    path1 = "C:\Program Files\Google\Chrome\Application\\chrome.exe"
-    path2 = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-    #windows 10
-    home = str(Path.home())
-    #print(home) #C:\Users\hello
-    path3 = home + "\\AppData\\Local\\Google\\Chrome\Application\\chrome.exe"
-    if os.path.exists(path1):
-        return path1
-    elif os.path.exists(path2):
-        return path2
-    elif os.path.exists(path3):
-        return path3
+    if platform.system() == 'Darwin': #맥
+        return "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
+    elif platform.system() == 'Windows': #윈도우
+        #windows 7
+        path1 = "C:\Program Files\Google\Chrome\Application\\chrome.exe"
+        path2 = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+        #windows 10
+        home = str(Path.home())
+        #print(home) #C:\Users\hello
+        path3 = home + "\\AppData\\Local\\Google\\Chrome\Application\\chrome.exe"
+        if os.path.exists(path1):
+            return path1
+        elif os.path.exists(path2):
+            return path2
+        elif os.path.exists(path3):
+            return path3
+    elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+        return ""
 
 def kill_all_chrome_web_browser_processes():
     if platform.system() == 'Darwin': #맥

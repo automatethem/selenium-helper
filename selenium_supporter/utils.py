@@ -27,7 +27,7 @@ import traceback
 
 def get_chrome_web_browser_path():
     if platform.system() == 'Darwin': #맥
-        return "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
+        return "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     elif platform.system() == 'Windows': #윈도우
         #windows 7
         path1 = "C:\Program Files\Google\Chrome\Application\\chrome.exe"
@@ -72,7 +72,8 @@ def open_chrome_web_browser(user_data_dir=None, proxy_server=None):
     proxy_server_option = ""
     if proxy_server:
         proxy_server_option = f"--proxy-server={proxy_server}"
-    subprocess.Popen(f'{chrome_web_browser_path} {user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0') 
+    #subprocess.Popen(f'{chrome_web_browser_path} {user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0') 
+    subprocess.Popen([chrome_web_browser_path, f"{user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0"]) 
 
 def open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, remote_debugging_address, user_data_dir=None, proxy_server=None, headless=False):
     chrome_web_browser_path = get_chrome_web_browser_path()

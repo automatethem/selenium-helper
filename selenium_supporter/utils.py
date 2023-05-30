@@ -27,7 +27,7 @@ import traceback
 
 def get_chrome_web_browser_path():
     if platform.system() == 'Darwin': #맥
-        return "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        return "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
     elif platform.system() == 'Windows': #윈도우
         #windows 7
         path1 = "C:\Program Files\Google\Chrome\Application\\chrome.exe"
@@ -88,7 +88,7 @@ def open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, re
     headless_option = ""
     if headless:
         headless_option = f"--headless={headless}"
-    subprocess.Popen([chrome_web_browser_path, f'--remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0']) 
+    subprocess.Popen(f'{chrome_web_browser_path} --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0', shell=True)
     #subprocess.Popen(f'{chrome_web_browser_path} --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0') #윈도우 ok 
 
 def save_partial_screenshot(element, image_file):

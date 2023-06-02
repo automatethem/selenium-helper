@@ -7,7 +7,7 @@ def requirements():
 
 setuptools.setup(
 	name='selenium-supporter',
-	version='0.0.12',
+	version='0.0.13',
 	description='Selenium supporter',
 	long_description=open('README.md').read(),
 	long_description_content_type='text/markdown',

@@ -92,7 +92,7 @@ def open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, re
         #print(f"{chrome_web_browser_path} --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0 &")
         subprocess.Popen(f"{chrome_web_browser_path} --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0 &", shell=True)
     elif platform.system() == 'Windows': #윈도우   
-        #print(f"\"{chrome_web_browser_path}\" --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0')
+        #print(f"\"{chrome_web_browser_path}\" --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0")
         subprocess.Popen(f"\"{chrome_web_browser_path}\" --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0", shell=True) 
     elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
         pass

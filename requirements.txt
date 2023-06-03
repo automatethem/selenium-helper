@@ -1,3 +1,4 @@
+#pip install -r requirements.txt
 #Anaconda3-2022.05-Windows-x86.exe
 #https://repo.anaconda.com/archive/
 #selenium==4.7.2 #콘솔창뜸

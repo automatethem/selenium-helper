@@ -77,7 +77,7 @@ def open_chrome_web_browser(user_data_dir=None, proxy_server=None):
     subprocess.Popen([chrome_web_browser_path, f"{user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0"]) 
 '''
 def open_chrome_web_browser(url=None, user_data_dir=None, proxy_server=None):
-    chrome_web_browser_path = selenium_supporter.utils.get_chrome_web_browser_path()
+    chrome_web_browser_path = get_chrome_web_browser_path()
     #https://not-to-be-reset.tistory.com/454
     user_data_dir_option = ""
     if user_data_dir:

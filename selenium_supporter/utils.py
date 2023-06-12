@@ -62,20 +62,6 @@ def kill_all_chrome_web_browser_driver_processes():
     elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
         pass
 
-'''
-def open_chrome_web_browser(user_data_dir=None, proxy_server=None):
-    chrome_web_browser_path = get_chrome_web_browser_path()
-    #https://not-to-be-reset.tistory.com/454
-    user_data_dir_option = ""
-    if user_data_dir:
-        user_data_dir_option = f"--user-data-dir={user_data_dir}"
-    #https://www.chromium.org/developers/design-documents/network-stack/socks-proxy/
-    proxy_server_option = ""
-    if proxy_server:
-        proxy_server_option = f"--proxy-server={proxy_server}"
-    #subprocess.Popen(f'{chrome_web_browser_path} {user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0') 
-    subprocess.Popen([chrome_web_browser_path, f"{user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0"]) 
-'''
 def open_chrome_web_browser(url=None, user_data_dir=None, proxy_server=None):
     chrome_web_browser_path = get_chrome_web_browser_path()
     #https://not-to-be-reset.tistory.com/454

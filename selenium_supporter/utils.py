@@ -61,7 +61,8 @@ def kill_all_chrome_web_browser_driver_processes():
         subprocess.call("TASKKILL /f /IM CHROMEDRIVER.EXE")
     elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
         pass
-    
+
+'''
 def open_chrome_web_browser(user_data_dir=None, proxy_server=None):
     chrome_web_browser_path = get_chrome_web_browser_path()
     #https://not-to-be-reset.tistory.com/454
@@ -74,6 +75,30 @@ def open_chrome_web_browser(user_data_dir=None, proxy_server=None):
         proxy_server_option = f"--proxy-server={proxy_server}"
     #subprocess.Popen(f'{chrome_web_browser_path} {user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0') 
     subprocess.Popen([chrome_web_browser_path, f"{user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0"]) 
+'''
+def open_chrome_web_browser(url=None, user_data_dir=None, proxy_server=None):
+    chrome_web_browser_path = selenium_supporter.utils.get_chrome_web_browser_path()
+    #https://not-to-be-reset.tistory.com/454
+    user_data_dir_option = ""
+    if user_data_dir:
+        user_data_dir_option = f"--user-data-dir={user_data_dir}"
+    #https://www.chromium.org/developers/design-documents/network-stack/socks-proxy/
+    proxy_server_option = ""
+    if proxy_server:
+        proxy_server_option = f"--proxy-server={proxy_server}"
+    #subprocess.Popen(f'{chrome_web_browser_path} {user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0') 
+    ##subprocess.Popen([chrome_web_browser_path, f"{user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0"]) 
+    if not url:
+        url = ""
+    if platform.system() == 'Darwin': #맥
+        #print(f"{chrome_web_browser_path} --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0 &")
+        subprocess.Popen(f"{chrome_web_browser_path} {url} {user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0", shell=True)
+        ##subprocess.Popen([chrome_web_browser_path, f"{user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0"]) 
+    elif platform.system() == 'Windows': #윈도우   
+        #print(f"\"{chrome_web_browser_path}\" --remote-debugging-port={remote_debugging_port} --remote-debugging-address={remote_debugging_address} {user_data_dir_option} {proxy_server_option} {headless_option} --disk-cache-dir=null --disk-cache-size=0")
+        subprocess.Popen(f"\"{chrome_web_browser_path}\" {url} {user_data_dir_option} {proxy_server_option}  --disk-cache-dir=null --disk-cache-size=0", shell=True) 
+    elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+        pass
 
 def open_chrome_web_browser_with_remote_debugging_mode(remote_debugging_port, remote_debugging_address, user_data_dir=None, proxy_server=None, headless=False):
     chrome_web_browser_path = get_chrome_web_browser_path()

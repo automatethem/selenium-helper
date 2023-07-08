@@ -189,10 +189,12 @@ def save_partial_screenshot_with_scroll(driver, partial_element, image_file):
     image.save(image_file)
     
 def set_value(driver, element, value):
-    #element.send_keys(value)
     driver.execute_script(f"""
     arguments[0].value='{value}';
     """, element)
+
+def set_value_send_keys(driver, element, value):
+    element.send_keys(value)
 
 def set_attribute(driver, element, attribute, value):
     driver.execute_script(f"""
@@ -223,12 +225,30 @@ def click(driver, element):
 def click(driver, element):
     element.click()
     
-def send_keys_click(driver, element):    
+#def send_keys_click(driver, element):    
+#    element.send_keys(Keys.ENTER)
+def click_send_keys(driver, element):    
     element.send_keys(Keys.ENTER)
 
-def javascript_click(driver, element):
+#def javascript_click(driver, element):
+    driver.execute_script("arguments[0].click();", element)
+def click_javascript(driver, element):
     driver.execute_script("arguments[0].click();", element)
 
+def scroll_down_to_bottom(driver):
+    #https://www.codeit.kr/community/questions/UXVlc3Rpb246NjIyNDU3ZDAzNDJiOGU3ZGNkMDJhZTM0
+    #driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    while True:
+        last_height = driver.execute_script("return document.body.scrollHeight")
+
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+        time.sleep(1.5) 
+
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break
+                
 if __name__ == "__main__":
     level = logging.DEBUG
     #level = logging.INFO

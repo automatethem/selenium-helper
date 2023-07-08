@@ -23,12 +23,14 @@ selenium_supporter.utils.save_full_screenshot(driver, image_file)
 selenium_supporter.utils.save_full_screenshot_with_scroll(driver, image_file)
 selenium_supporter.utils.save_partial_screenshot_with_scroll(driver, partial_element, image_file)
 selenium_supporter.utils.set_value(driver, element, value)
+selenium_supporter.utils.set_value_send_keys(driver, element, value)
 selenium_supporter.utils.set_attribute(driver, element, attribute, value)
 selenium_supporter.utils.remove_element(driver, element)
 selenium_supporter.utils.remove_x_scrollbar(driver)
 selenium_supporter.utils.click(driver, element)
-selenium_supporter.utils.send_keys_click(driver, element)    
-selenium_supporter.utils.javascript_click(driver, element)
+selenium_supporter.utils.click_send_keys(driver, element)    
+selenium_supporter.utils.click_javascript(driver, element)
+selenium_supporter.utils.scroll_down_to_bottom(driver)
 </pre>
 
 Examples:  

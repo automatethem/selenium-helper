@@ -222,7 +222,7 @@ def click(driver, element):
     driver.execute_script("arguments[0].click();", element)
 '''
 
-def click(driver, element):
+def click(element):
     element.click()
     
 #def send_keys_click(driver, element):    

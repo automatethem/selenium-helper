@@ -231,7 +231,7 @@ def click_send_keys(driver, element):
     element.send_keys(Keys.ENTER)
 
 #def javascript_click(driver, element):
-    driver.execute_script("arguments[0].click();", element)
+#    driver.execute_script("arguments[0].click();", element)
 def click_javascript(driver, element):
     driver.execute_script("arguments[0].click();", element)
 

@@ -34,7 +34,7 @@ class ChromeDriver():
             executable_path = ChromeDriverManager().install()
             #executable_path = ChromeDriverManager(version="114.0.5735.90").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
             #executable_path = ChromeDriverManager(version="116.0.5845.97").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
-            print("executable_path:", executable_path)
+            print("executable_path:", executable_path) #executable_path: C:\Users\Administrator\.wdm\drivers\chromedriver\win32\103.0.5060.134\chromedriver.exe
             service = Service(executable_path=executable_path)
         except:
             service = Service() 
@@ -132,7 +132,7 @@ class ChromeDebuggingDriver():
             executable_path = ChromeDriverManager().install()
             #executable_path = ChromeDriverManager(version="114.0.5735.90").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
             #executable_path = ChromeDriverManager(version="116.0.5845.97").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
-            print("executable_path:", executable_path)
+            print("executable_path:", executable_path) #executable_path: C:\Users\Administrator\.wdm\drivers\chromedriver\win32\103.0.5060.134\chromedriver.exe
             service = Service(executable_path=executable_path)
         except:
             service = Service() 

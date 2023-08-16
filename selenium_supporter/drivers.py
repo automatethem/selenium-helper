@@ -28,10 +28,24 @@ class ChromeDriver():
     #def __init__(self):
         super().__init__()
 
-        #executable_path = "chromedriver_98.0.4758.102/chromedriver.exe"
-        executable_path = ChromeDriverManager().install()
-        #executable_path = ChromeDriverManager(version="114.0.5735.90").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
-        service = Service(executable_path=executable_path)
+        try:
+            #크롬드라이버 자동 다운로드
+            #executable_path = "chromedriver_98.0.4758.102/chromedriver.exe"
+            executable_path = ChromeDriverManager().install()
+            #executable_path = ChromeDriverManager(version="114.0.5735.90").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
+            #executable_path = ChromeDriverManager(version="116.0.5845.97").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
+            print("executable_path:", executable_path)
+            service = Service(executable_path=executable_path)
+        except:
+            service = Service() 
+            #1.크롬 드라이버 수동 다운로드  
+            #https://googlechromelabs.github.io/chrome-for-testing/
+            #2.크롬드라이버 놓기
+            #https://sebhastian.com/chromedriver-executable-needs-to-be-in-path/
+            #윈도우 
+            #C:\Windows\System32\chromedriver.exe
+            #맥
+            #/usr/local/bin/chromedriver 혹은 /usr/bin/chromedriver
         if platform.system() == 'Windows': #윈도우
             from subprocess import CREATE_NO_WINDOW #윈도우에만
             service.creationflags = CREATE_NO_WINDOW #콘솔창 숨기기 https://stackoverflow.com/questions/66953190/selenium-hide-chromdriver-console-window
@@ -112,10 +126,24 @@ class ChromeDebuggingDriver():
     def __init__(self, chrome_debugger_address=None):
         super().__init__()
 
-        #executable_path = "chromedriver_98.0.4758.102/chromedriver.exe"
-        #executable_path = ChromeDriverManager().install()
-        executable_path = ChromeDriverManager(version="114.0.5735.90").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
-        service = Service(executable_path=executable_path)
+        try:
+            #크롬드라이버 자동 다운로드
+            #executable_path = "chromedriver_98.0.4758.102/chromedriver.exe"
+            executable_path = ChromeDriverManager().install()
+            #executable_path = ChromeDriverManager(version="114.0.5735.90").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
+            #executable_path = ChromeDriverManager(version="116.0.5845.97").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
+            print("executable_path:", executable_path)
+            service = Service(executable_path=executable_path)
+        except:
+            service = Service() 
+            #1.크롬 드라이버 수동 다운로드  
+            #https://googlechromelabs.github.io/chrome-for-testing/
+            #2.크롬드라이버 놓기
+            #https://sebhastian.com/chromedriver-executable-needs-to-be-in-path/
+            #윈도우 
+            #C:\Windows\System32\chromedriver.exe
+            #맥
+            #/usr/local/bin/chromedriver 혹은 /usr/bin/chromedriver
         if platform.system() == 'Windows': #윈도우
             from subprocess import CREATE_NO_WINDOW #윈도우에만
             service.creationflags = CREATE_NO_WINDOW #콘솔창 숨기기 https://stackoverflow.com/questions/66953190/selenium-hide-chromdriver-console-window

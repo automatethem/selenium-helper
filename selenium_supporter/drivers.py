@@ -29,8 +29,8 @@ class ChromeDriver():
         super().__init__()
 
         #executable_path = "chromedriver_98.0.4758.102/chromedriver.exe"
-        #executable_path = ChromeDriverManager().install()
-        executable_path = ChromeDriverManager(version="114.0.5735.90").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
+        executable_path = ChromeDriverManager().install()
+        #executable_path = ChromeDriverManager(version="114.0.5735.90").install() #ValueError: There is no such driver by url https://chromedriver.storage.googleapis.com/LATEST_RELEASE_115.0.5790 일시적 버그 픽스
         service = Service(executable_path=executable_path)
         if platform.system() == 'Windows': #윈도우
             from subprocess import CREATE_NO_WINDOW #윈도우에만
